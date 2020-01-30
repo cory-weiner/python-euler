@@ -1,0 +1,26 @@
+
+def solution():
+    i = 40000
+    max_div = 0
+    while True:
+        divisors = count_divisors(get_triangle(i))
+        max_div = max(divisors,max_div)
+        print(i)
+        print(max_div)
+        if divisors > 500:
+            return get_triangle(n)
+        else:
+            i+=1
+             
+
+
+def get_triangle(n):
+    return sum(range(1,n+1))
+
+def count_divisors(n):
+    divisor_count = 1
+    for i in range(2,n+1):
+        if n % i == 0 : divisor_count += 1
+    return divisor_count
+
+print(solution())
