@@ -16,6 +16,8 @@ arr = [
     [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23]
 ]
 
+# Solution is to work backwards through the tree, calculating the maximum of each node as you go
+# Replce the node with the max value of the two child nodes + the node
 def find_max_path(arr):
     rowcount = len(arr)-1
     for row,values in enumerate(arr):
