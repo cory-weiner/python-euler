@@ -1,0 +1,11 @@
+def solution():
+    return True
+
+
+
+def sum_divisors(n):
+    divisor_sum = 1
+    for i in range(2,n):
+        if n % i == 0 : 
+            divisor_sum += i
+    return divisor_sum
