@@ -1,12 +1,18 @@
-def solution(bounds):
-    results = []
-    for i in range(1,bounds):
-        max_y = int(9999/i)
-        min_y = (1000)
-        for val in range(min_y,max_y):
-            digit_string = str(i) + str(val) + str(i*val)
-            if len(digit_string)==9 and is_pandigital(digit_string):
-                results.append((i,val,i*val))
+def solution():
+    results = set()
+    for i in range(1,99):
+        if i < 10:
+            s = 1234
+        if i > 10:
+            s = 123
+        for r in range(s,10000//i):
+            product = i * r
+            num_string = str(i) + str(r) + str(product)
+            if is_pandigital(num_string):
+                results.add(product)
+    return results
+
+
 
 
 def is_pandigital(n):
@@ -15,6 +21,10 @@ def is_pandigital(n):
         if i not in digits:
             return False
     return True
+
+sol = solution()
+print(sol)
+print(sum(sol))
 
 # def printAllKLengthRec(set, prefix, n, k): 
 #     if (k == 0) : 
